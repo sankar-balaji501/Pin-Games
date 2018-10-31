@@ -94,12 +94,12 @@ public class AlleyController : MonoBehaviour {
         countText.text = "Count: " + count.ToString() + "/6";
         if (count == 6 && win == -1) {
             win = 1;
-            winText.text = "You knock down all the pins! You win!";
+            winText.text = "You knocked down all the pins! You win!";
         }
     }
 
     void Lose() {
         win = 0;
-        winText.text = "You failed to knock down all the pins. You lose!";
+        winText.text = "You failed to knock down all the pins in time. You lose!";
     }
 }
