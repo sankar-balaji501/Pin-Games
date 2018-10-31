@@ -208,7 +208,7 @@ public class BallController : MonoBehaviour {
         if (Input.GetButtonDown("Restart")) {
             Time.timeScale = 1.0f;
             Debug.Log("Restarting game");
-            SceneManager.LoadScene("1.2.2");
+            SceneManager.LoadScene("1.2");
         }
         if (!gameOver && Input.GetButtonDown("Pause")) {
             if (!paused) {
@@ -234,10 +234,12 @@ public class BallController : MonoBehaviour {
             }
         }
         if (Input.GetButtonDown("Scene1")) {
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene("1.1");
         }
         if (Input.GetButtonDown("Scene2")) {
-            SceneManager.LoadScene("1.2.2");
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("1.2");
         }
     }
 

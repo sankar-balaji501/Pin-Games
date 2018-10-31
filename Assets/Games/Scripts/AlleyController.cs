@@ -18,6 +18,7 @@ public class AlleyController : MonoBehaviour {
     private float timeLeft = 10.0f;
     private int win = -1;
     private GameObject[] pins;
+    private bool paused, slow;
 
     // Use this for initialization
     void Start () {
@@ -29,17 +30,33 @@ public class AlleyController : MonoBehaviour {
 
     // Update is called once per frame
     void Update() {
+        if (Input.GetButtonDown("Slow")) {
+            if (!paused) {
+                if (!slow) {
+                    slow = true;
+                    Time.timeScale = 0.5f;
+                }
+                else {
+                    slow = false;
+                    Time.timeScale = 1.0f;
+                }
+            }
+        }
         if (Input.GetButtonDown("Quit"))
             Application.Quit();
-        if (Input.GetButtonDown("Restart"))
+        if (Input.GetButtonDown("Restart")) {
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene("1.1");
+        }
         if (Input.GetButtonDown("Pause"))
             Time.timeScale = 1 - Time.timeScale;
         if (Input.GetButtonDown("Scene1")) {
+            Time.timeScale = 1.0f;
             SceneManager.LoadScene("1.1");
         }
         if (Input.GetButtonDown("Scene2")) {
-            SceneManager.LoadScene("1.2.2");
+            Time.timeScale = 1.0f;
+            SceneManager.LoadScene("1.2");
         }
         SetTimeText();
         UpdateToppledPins();
@@ -61,12 +78,12 @@ public class AlleyController : MonoBehaviour {
         if (timeLeft > 0 && win == -1) {
             timeLeft -= Time.deltaTime;
             if (timeLeft < 0) {
-                timeText.text = "Time Remaining: 0.00";
+                timeText.text = "Time Remaining: 0.0";
                 Lose();
             }
             else {
                 if (timeLeft < 1)
-                    timeText.text = "Time Remaining: 0" + timeLeft.ToString("0.0");
+                    timeText.text = "Time Remaining: " + timeLeft.ToString("0.0");
                 else
                     timeText.text = "Time Remaining: " + timeLeft.ToString("0.0");
             }
@@ -74,15 +91,15 @@ public class AlleyController : MonoBehaviour {
     }
 
     void SetCountText() {
-        countText.text = "Count: " + count.ToString();
+        countText.text = "Count: " + count.ToString() + "/6";
         if (count == 6 && win == -1) {
             win = 1;
-            winText.text = "You Win! You did it! You're Amazing! Yaaaaaaay!!!";
+            winText.text = "You knock down all the pins! You win!";
         }
     }
 
     void Lose() {
         win = 0;
-        winText.text = "You Lost! You're a failure!";
+        winText.text = "You failed to knock down all the pins. You lose!";
     }
 }
