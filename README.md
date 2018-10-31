@@ -3,6 +3,11 @@
 ## Summary
 This project contains two games, which were created in Unity. The GameObjects in Unity incorporate C# scripts to function correctly and make the game's AI come to life. The first game is a simple game of bowling where you control a ball to knock over pins. The second game is a more complex game where you escape from pins that chase you, by navigating along platforms layed out like a maze.
 
+## Play the Games
+In order to play the games, first you need to make sure you have Unity installed on your computer. You can then navigate to:
+`Pin-Games-master\Assets\Games`
+and open up `1.1.unity` or `1.2.unity` (doesn't matter). When Unity is done loading, go to File -> Build And Run. Create a file (e.g. "build") and build to there. Then hit "Play!" and you're good to go! Alternatively, you could play within the Unity engine and mess around with settings if that's your desire.
+
 ## Game 1: Bowling
 
 ### Controls
