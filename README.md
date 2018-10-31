@@ -12,9 +12,13 @@ and open up `1.1.unity` or `1.2.unity` (doesn't matter). When Unity is done load
 
 ### Controls
 Up/Left/Down/Right or W/A/S/D for moving forward, left, backwards, and right. 
+
 Q to quit the game. 
+
 R to restart. 
+
 S/Z for slow mode. 
+
 1/2 to load game 1 or game 2.
 
 ### Gameplay
@@ -24,9 +28,13 @@ You control a bowling ball on a platform leading to a bunch of pins. Your goal i
 
 ### Controls
 Left/Right or A/D for turning left and right. 
+
 Q to quit the game. 
+
 R to restart. 
+
 S/Z for slow mode. 
+
 1/2 to load game 1 or game 2.
 
 ### Gameplay
