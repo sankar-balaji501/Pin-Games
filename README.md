@@ -1,5 +1,8 @@
 # Pin-Games
 
+## Summary
+This project contains two games, which were created in Unity. The GameObjects in Unity incorporate C# scripts to function correctly and make the game's AI come to life. The first game is a simple game of bowling where you control a ball to knock over pins. The second game is a more complex game where you escape from pins that chase you, by navigating along platforms layed out like a maze.
+
 ## Game 1: Bowling
 
 ### Controls
@@ -12,7 +15,7 @@ S/Z for slow mode.
 ### Gameplay
 You control a bowling ball on a platform leading to a bunch of pins. Your goal is to knock all the pins down within the alloted 10 seconds. Doing so will earn you a victory. Failing to do so will cause you to fail. You will want to make sure not to fall off the platform or fly off the map.
 
-## Game 2: Pin Chaser
+## Game 2: Pin Chase
 
 ### Controls
 Left/Right or A/D for turning left and right. 
@@ -26,3 +29,6 @@ You are to traverse the path and attempt to make it to the end without getting c
 
 ### Additional Info
 The pins have a mode called "Woke Mode". After some time, the bunnies may become enraged and empowered, going off the path to chase you with a fiery aura. This makes the mode much more interesting and challenging. The cameras linger a bit behind the ball and readjusts its angles a lot more snappy than the implementation. The first camera feature gives the feeling of traveling fast and coming to a quick halt, and the second feature makes it easier to do sharp turns and less awkward. There are many background elements.
+
+### Technicalities
+The platforms are generated at the game's runtime through an array, but that same array is needed to determine the player's coordinates. The difficult part is getting the chasers to follow the player through a queue, while also maintaining its middle position on the platforms. Many options were explored, but I believe the hybrid option of path following AI and impulsive following AI offered the most exciting gameplay.
